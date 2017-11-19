@@ -1,0 +1,9 @@
+for (i, file) in enumerate(files):
+    if i == 0: continue # 1つ目のファイルは ".DS_Store"のため無視
+    doc = open(fileroots[0] + file).read().lower() # 小文字化して文書を取得
+
+    doc = doc.replace("\n", " ") # 改行文字の削除
+    doc = re.sub(re.compile("[!-/:-@[-`{-~]"), " ", doc) # 半角記号の削除
+    doc = re.sub(r'[0-9]+', "", doc) # 半角数字の削除
+
+    docs.append(doc)
