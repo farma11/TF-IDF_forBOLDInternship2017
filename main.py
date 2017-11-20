@@ -12,7 +12,7 @@ np.set_printoptions(precision=4) # 表示のフォーマットを指定 (有効�
 
 
 fileroots = [
-    './reviews/Mercari/',
+    './reviews/All/',
     ]
 files = os.listdir(fileroots[0]) # ./BBB/ 以下のファイルを全部取得
 
@@ -65,7 +65,7 @@ for vec in vecs.toarray():
         #dic.append({words[i][0]: vec[i]})
     for k, v in sorted(dic.items(), key=lambda x:-x[1]):
         if v == 0.0: break;
-        print str(k) + ", " + str(v)
+        print k, v
     print "---------------"
 
 #print vectorizer.vocabulary_.items()['saying'][1]
